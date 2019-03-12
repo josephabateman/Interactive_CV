@@ -1,0 +1,16 @@
+{
+  "name": "enhance-your-resume-website-with-an-interactive-portfolio",
+  "version": "1.0.0",
+  "description": "first time using this",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css --style compressed"
+  },
+  "keywords": [
+    "testing",
+    "sass",
+    "node"
+  ],
+  "author": "joe bateman",
+  "license": "ISC"
+}
