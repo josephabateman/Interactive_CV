@@ -1,1 +1,396 @@
-body{font-family:sans-serif,verdana,arial;font-size:12px;background-color:#e7e7e7}.nav-bar{margin:30px 0 30px 0}.nav-bar li{display:inline;text-transform:uppercase;background-color:#105a97;padding:7px}.nav-bar a{text-decoration:none;color:#fff}.all{display:grid;grid-template-columns:auto auto;justify-content:center}.personal-details-container{grid-column-start:1;width:237px;display:flex;flex-direction:column;text-align:center;background-color:#86d6fc;justify-content:space-between}.personal-header{padding:3px 0 3px 0;background-color:#105a97;display:block;color:#fff;text-transform:uppercase}li{margin-bottom:10px;text-align:left;list-style-type:none}#profile-picture{margin-top:20px;max-height:135px;border:3px solid gray;border-radius:50%}.personal-details-container p{text-align:justify;text-justify:inter-word;margin:0px 15px}.job-grid{width:427px;padding:0 35px 0 35px;grid-column-start:2;display:flex;flex-flow:row wrap;justify-content:space-between;background-color:#fff}#joseph{color:#86d6fc}#bateman{font-weight:lighter}#freela{border-bottom:1.2px solid #86d6fc}.work-header{margin:30px 0px -6px 0px;width:427px;border-bottom:1.2px solid #86d6fc}.dates{width:100px}.job-description{width:300px}.references{width:180px;line-height:1.5em}.ref-name{text-transform:uppercase}h1{margin-top:50px;font-size:32px;font-weight:normal;text-transform:uppercase}h2{margin-top:-20px;font-size:18px;font-weight:normal}h3{display:inline;text-transform:uppercase;font-size:1.5em;font-weight:normal}h4{text-transform:uppercase;margin-bottom:-8px}h5{font-weight:normal;margin-bottom:-8px}hr{border-top:1px solid #86d6fc}.hobbies-icons i{border:1.5px solid #105a97;padding:8px;border-radius:50%;font-size:30px}.hobbies{display:flex;flex-flow:column wrap;justify-content:space-between}.hobbies-icons{display:flex;flex-direction:row;margin:0px 25px 20px 20px;justify-content:space-between}.work-icon{margin-right:20px;font-size:20px;color:#86d6fc}@media all and (max-width: 768px){.all{display:unset;width:auto;padding:5px}.personal-details-container{width:auto;background-color:#fff}.hobbies{display:none}#about-div{display:none}.job-grid h5{color:#105a97}.work-header{margin:30px auto 0 auto;text-align:center}.job-grid{width:auto;padding:0 5px 0 5px;margin:30px auto 0 auto}.name-header{width:768px;text-align:center;margin:0 auto 0 auto}.job-description{width:380px;text-align:center;margin:0 auto 0 auto}.dates{width:380px;text-align:center;margin:0 auto 0 auto}.references{width:768px;text-align:center;margin:0 auto 0 auto}#profile-picture{margin:65px 30px 0px 8px;max-width:80px;float:right}ul{display:flex;padding-left:0;margin-left:10px;flex-flow:row-reverse wrap;justify-content:space-between}li{width:200px}}.project-parent{display:flex;flex-flow:row wrap;width:400px;margin-top:50px;text-align:center}.proj-img{max-height:180px;padding:10px}.project h1{margin-top:0px;width:160px;font-size:12px;color:#fff;background-color:#105a97;padding:4px;margin-left:auto;margin-right:auto}/*# sourceMappingURL=style.css.map */
+body {
+  font-family: sans-serif, verdana, arial;
+  font-size: 12px;
+  background-color: #E7E7E7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+}
+
+.left-column {
+  grid-column-start: 1;
+  width: 237px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #86D6FC;
+}
+
+.left-column__header {
+  display: block;
+  padding: 3px 0 3px 0;
+  background-color: #105A97;
+  color: white;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+#left-column__contact ul {
+  text-align: left;
+  list-style-type: none;
+}
+
+ul div {
+  margin-bottom: 10px;
+  overflow: hidden;
+  width: 0;
+  animation: type 5s steps(60, end) forwards;
+}
+
+div:nth-child(1) {
+  animation-delay: 0s;
+}
+
+div:nth-child(2) {
+  animation-delay: 1s;
+}
+
+div:nth-child(3) {
+  animation-delay: 2s;
+}
+
+div:nth-child(4) {
+  animation-delay: 4s;
+}
+
+div:nth-child(5) {
+  animation-delay: 5s;
+}
+
+@keyframes type {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    width: 100%;
+    opacity: 5;
+  }
+}
+#left-column__pic {
+  margin-top: 20px;
+  max-height: 135px;
+  border: 3px solid grey;
+  border-radius: 50%;
+  animation-duration: 1s;
+  animation-name: bounce;
+  overflow: hidden;
+}
+
+@keyframes bounce {
+  0% {
+    margin-left: 40%;
+  }
+  25% {
+    margin-right: 40%;
+  }
+  50% {
+    margin-left: 20%;
+  }
+  100% {
+    margin-right: 0%;
+  }
+}
+.left-column p {
+  margin: 0px 15px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.right-column {
+  width: 427px;
+  padding: 0 35px 0 35px;
+  grid-column-start: 2;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background-color: white;
+}
+
+#joseph {
+  color: #86D6FC;
+  transition-property: color;
+  transition-duration: 2s;
+}
+#joseph:hover {
+  color: #bd4c01;
+}
+
+#bateman {
+  font-weight: lighter;
+}
+
+#freela {
+  border-bottom: 1.2px solid #86D6FC;
+}
+
+.nav-bar {
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: right;
+  list-style-type: none;
+  margin-top: 30px;
+}
+
+.nav-bar li {
+  margin-bottom: 10px;
+}
+
+.nav-bar a {
+  font-family: roboto slab;
+  text-decoration: none;
+  color: #105A97;
+}
+.nav-bar a:hover {
+  color: orange;
+}
+
+.work {
+  margin: 30px 0px -6px 0px;
+  width: 427px;
+  border-bottom: 1.2px solid #86D6FC;
+}
+
+.work__dates {
+  width: 100px;
+}
+
+.work__description {
+  width: 300px;
+}
+
+.work__references {
+  width: 180px;
+  line-height: 1.5em;
+}
+
+.work__references--name {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.work__references--name:hover {
+  border: 1px solid #105A97;
+  border-radius: 100%;
+  padding: 2px 30px;
+}
+
+h1 {
+  margin-top: 50px;
+  font-size: 32px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-top: -20px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+h3 {
+  display: inline;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+h4 {
+  margin-bottom: -8px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+h5 {
+  margin-bottom: -8px;
+  font-weight: normal;
+}
+
+hr {
+  border-top: 1px solid #86D6FC;
+}
+
+.left-column__hobbies-icons i {
+  padding: 8px;
+  border: 1.5px solid #105A97;
+  border-radius: 50%;
+  font-size: 30px;
+}
+.left-column__hobbies-icons i:hover {
+  background: white;
+  border-radius: 10%;
+}
+
+.left-column__hobbies {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.left-column__hobbies-icons {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 25px 20px 20px;
+  justify-content: space-between;
+}
+
+.work-icon {
+  margin-right: 20px;
+  font-size: 20px;
+  color: #86D6FC;
+}
+
+.portfolio {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 100px;
+}
+.portfolio .portfolio__child {
+  width: 200px;
+  text-align: center;
+}
+.portfolio h1 {
+  font-size: 14px;
+  width: 75%;
+  background-color: #105A97;
+  color: white;
+  padding: 3px 0 3px 0;
+  margin: -3px auto 40px auto;
+  background: #105A97;
+  transition-property: background;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
+.portfolio h1:hover {
+  background: #bd4c01;
+}
+.portfolio .portfolio__img {
+  height: 150px;
+}
+
+@media all and (max-width: 768px) {
+  .grid {
+    display: unset;
+    width: auto;
+    padding: 5px;
+  }
+
+  .left-column {
+    width: auto;
+    background-color: white;
+  }
+
+  .left-column__hobbies {
+    display: none;
+  }
+
+  #left-column__about {
+    display: none;
+  }
+
+  .right-column h5 {
+    color: #105A97;
+  }
+
+  .work {
+    margin: 30px auto 0 auto;
+    text-align: center;
+  }
+
+  .right-column {
+    width: auto;
+    padding: 0 5px 0 5px;
+    margin: 30px auto 0 auto;
+  }
+
+  .right-column__title {
+    width: 768px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
+
+  .work__description {
+    width: 380px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
+
+  .work__dates {
+    width: 380px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
+
+  .work__references {
+    width: 768px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
+
+  #left-column__pic {
+    margin: 65px 30px 0px 8px;
+    max-width: 80px;
+    float: right;
+  }
+
+  ul {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    padding-left: 0;
+    margin-left: 10px;
+    justify-content: space-between;
+  }
+
+  li {
+    width: 200px;
+  }
+}
+/*------------------------------------*\
+    $CAROUSEL
+\*------------------------------------*/
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.panes {
+  list-style: none;
+  position: relative;
+  width: 200%;
+  /* Number of panes * 100% */
+  overflow: hidden;
+  /* This is used solely to clear floats, it does not add functionality. */
+  animation: carousel 10s infinite;
+}
+
+.panes > li {
+  position: relative;
+  float: left;
+  width: 50%;
+  /* 100 / number of panes */
+}
+
+@keyframes carousel {
+  0% {
+    left: 100%;
+  }
+  10% {
+    left: 0%;
+  }
+  45% {
+    left: 0;
+  }
+  55% {
+    left: -100%;
+  }
+  90% {
+    left: -100%;
+  }
+  100% {
+    left: -230%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

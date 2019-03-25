@@ -1,123 +1,227 @@
-body {
+// color variables
+$personal-h3-color: white;
+$personal-background-color: #86D6FC;
+$h3-background-color: #105A97;
+
+// spacing variables
+$margin-top--small-centered: 30px auto 0 auto;
+$div-center: auto;
+
+// flex variables
+@mixin flex__column-wrap {
+	display: flex;
+	flex-flow: column wrap;
+}
+@mixin flex__row-wrap {
+	display: flex;
+	flex-flow: row wrap;
+}
+// responsive layouts
+@mixin responsive-modifier--narrow {
+	width: 380px;
+	text-align: center;
+	margin: 0 auto 0 auto;
+}
+@mixin responsive-modifier--wide {
+	width: 768px;
+	text-align: center;
+	margin: 0 auto 0 auto;
+}
+
+// text styles
+@mixin main-header--style {
+	background-color: $h3-background-color;
+	color: $personal-h3-color;
+	}
+@mixin header--normal-uppercase {
+	font-weight: normal;
+	text-transform: uppercase;
+}
+@mixin default-fonts {
 	font-family: sans-serif, verdana, arial;
+}
+
+body {
+	@include default-fonts;
 	font-size: 12px;
 	background-color: #E7E7E7;
 }
 
-/* navigation - cant seem to center*/
-.nav-bar {
-	margin: 30px 0 30px 0;
-}
-
-.nav-bar li {
-	display: inline;
-	text-transform: uppercase;
-	background-color: #105A97;
-	padding: 7px;
-}
-
-.nav-bar a {
-	text-decoration: none;
-	color: white;
-}
-
-/* desktop, 2 column grid */
-.all {
+// desktop, 2 column grid
+.grid {
 	display: grid;
 	grid-template-columns: auto auto;
 	justify-content: center;
 }
 
-/* desktop, left flexbox */
-.personal-details-container {
+// desktop, left flexbox
+.left-column {
 	grid-column-start: 1;
 	width: 237px;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	background-color: #86D6FC;
+	@include flex__column-wrap;
 	justify-content: space-between;
+	text-align: center;
+	background-color: $personal-background-color;
 }
 
-.personal-header {
-	padding: 3px 0 3px 0;
-	background-color: #105A97;
+.left-column__header {
 	display: block;
-	color: white;
-	text-transform: uppercase;
+	padding: 3px 0 3px 0;
+	@include main-header--style;
+	@include header--normal-uppercase;
 }
 
-li {
-	margin-bottom: 10px;
+#left-column__contact ul {
 	text-align: left;
 	list-style-type: none;
 }
 
-#profile-picture {
+ul div {
+	margin-bottom: 10px;
+
+	overflow: hidden;
+	width: 0;
+	animation: type 5s steps(60, end) forwards;
+	
+  }
+  div:nth-child(1) {
+	animation-delay: 0s;
+  }
+  div:nth-child(2) {
+	animation-delay: 1s;
+  }
+  div:nth-child(3) {
+	animation-delay: 2s;
+  }
+  div:nth-child(4) {
+	animation-delay: 4s;
+  }
+  div:nth-child(5) {
+	animation-delay: 5s;
+  }
+ 
+  @keyframes type {
+	0% {
+	  opacity: 0.1;
+	}
+	100% {
+	  width: 100%;
+	  opacity: 5;
+	}
+  }
+  
+
+#left-column__pic {
 	margin-top: 20px;
 	max-height: 135px;
 	border: 3px solid grey;
 	border-radius: 50%;
+
+	animation-duration: 1s;
+	animation-name: bounce;
+	overflow: hidden;
 }
 
-.personal-details-container p {
+@keyframes bounce {
+	0% {
+	  margin-left: 40%;
+	}
+	25% {
+	  margin-right: 40%;
+	}
+	50% {
+		margin-left: 20%;
+	  }
+	100% {
+		margin-right: 0%;
+	  }
+  }
+
+
+.left-column p {
+	margin: 0px 15px;
 	text-align: justify;
  	text-justify: inter-word;
-	margin: 0px 15px;
 }
 
-/* desktop, right flexbox */
-.job-grid {
+// desktop, right flexbox
+.right-column {
 	width: 427px;
 	padding: 0 35px 0 35px;
 	grid-column-start: 2;
-	display: flex;
-	flex-flow: row wrap;
+	@include flex__row-wrap;
 	justify-content: space-between;
-	background-color: white;
+	
+	background-color: $personal-h3-color;
 }
 
-/* name */
+// title
 #joseph {
-	color: #86D6FC;
+	color: $personal-background-color;
+			transition-property: color;
+			transition-duration: 2s;
+			&:hover {
+			color: #bd4c01;
+	  		}
 }
 #bateman {
 	font-weight: lighter;
 }
 #freela {
-	border-bottom: 1.2px solid #86D6FC
+	border-bottom: 1.2px solid $personal-background-color
 }
 
-/* jobs, dates, references */
-.work-header {
+.nav-bar {
+	@include header--normal-uppercase;
+	text-align: right;
+	list-style-type: none;
+	margin-top: 30px;
+}
+	.nav-bar li	{
+			margin-bottom: 10px;
+		}
+
+		.nav-bar a	{
+			font-family: roboto slab;
+			text-decoration: none;
+			color: $h3-background-color;
+			&:hover {color: orange;}
+		}
+
+// work, work__dates, work__references
+.work {
 	margin: 30px 0px -6px 0px;
 	width: 427px;
-	border-bottom: 1.2px solid #86D6FC;
+	border-bottom: 1.2px solid $personal-background-color;
 }
 
-.dates {
+.work__dates {
 	width: 100px;
 }
 
-.job-description {
+.work__description {
 	width: 300px;
 }
 
-.references {
+.work__references {
 	width: 180px;
 	line-height: 1.5em;
 }
 
-.ref-name {
-	text-transform: uppercase;
+.work__references--name {
+	@include header--normal-uppercase;
+	&:hover {
+		border: 1px solid $h3-background-color;
+		border-radius: 100%;	
+		padding: 2px 30px;  
+		}
 }
 
-/* general header rules */
+// general header rules
 h1 {
 	margin-top: 50px;
 	font-size: 32px;
-	font-weight: normal;
-	text-transform: uppercase;
+	@include header--normal-uppercase;
 }
 
 h2 {
@@ -128,40 +232,42 @@ h2 {
 
 h3 {
 	display: inline;
-	text-transform: uppercase;
+	@include header--normal-uppercase;
 	font-size: 1.5em;
-	font-weight: normal;
 }
 
 h4 {
-	text-transform: uppercase;
 	margin-bottom: -8px;
+	@include header--normal-uppercase;
 }
 
 h5 {
-	font-weight: normal;
 	margin-bottom: -8px;
+	font-weight: normal;
 }
 
 hr {
-	 border-top: 1px solid #86D6FC;
+	 border-top: 1px solid $personal-background-color;
 }
 
-/* icons */
-.hobbies-icons i {
-	border: 1.5px solid #105A97;
+// icons
+.left-column__hobbies-icons i {
 	padding: 8px;
+	border: 1.5px solid $h3-background-color;
 	border-radius: 50%;
 	font-size: 30px;
+	&:hover {
+			background: $personal-h3-color;
+			border-radius: 10%;	  
+	}
 }
 
-.hobbies {
-	display: flex;
-	flex-flow: column wrap;
+.left-column__hobbies {
+	@include flex__column-wrap;
 	justify-content: space-between;
 }
 
-.hobbies-icons {
+.left-column__hobbies-icons {
 	display: flex;
 	flex-direction: row;
 	margin: 0px 25px 20px 20px;
@@ -171,69 +277,88 @@ hr {
 .work-icon {
 	margin-right: 20px;
 	font-size: 20px;
-	color: #86D6FC;
+	color: $personal-background-color;
 }
 
-/* tablet media query rules */
+// portfolio
+.portfolio {
+	@include flex__row-wrap;
+	margin-top: 100px;
+		.portfolio__child {
+			width: 200px;
+			text-align: center;	
+		}
+		h1 {
+			font-size: 14px;
+			width: 75%;
+			@include main-header--style;
+			padding: 3px 0 3px 0;
+			margin: -3px auto 40px auto;
+
+			background: $h3-background-color;
+			transition-property: background;
+			transition-duration: 2s;
+			transition-timing-function: linear;
+			&:hover {
+			background: #bd4c01;
+	  		}
+		}
+		.portfolio__img {
+			height: 150px;
+		}
+}
+
+// tablet media query rules 
 @media all and (max-width: 768px) {
-	.all {
+	.grid {
 		display: unset;
 		width: auto;
 		padding: 5px;
 	}
-	.personal-details-container {
+	.left-column {
 		width: auto;
-		background-color: white;
+		background-color: $personal-h3-color;
 	}
-	.hobbies  {
-	display: none;
-	}
-	#about-div {
+	.left-column__hobbies  {
 		display: none;
 	}
-	.job-grid h5 {
-		color: #105A97;
+	#left-column__about {
+		display: none;
+	}
+	.right-column h5 {
+		color: $h3-background-color;
 		}
-	.work-header {
-		margin: 30px auto 0 auto;
+	.work {
+		margin: $margin-top--small-centered;
 		text-align: center;
 	}
-	.job-grid {
+	.right-column {
 		width: auto;
 		padding: 0 5px 0 5px;
-		margin: 30px auto 0 auto;
+		margin: $margin-top--small-centered;
 	}
-	.name-header {
-				width: 768px;
-				text-align: center;
-				margin: 0 auto 0 auto;
+	.right-column__title {
+		@include responsive-modifier--wide;
 			}
-	.job-description {
-			width: 380px;
-			text-align: center;
-			margin: 0 auto 0 auto;
+	.work__description {
+		@include responsive-modifier--narrow;
 			}
-		.dates {
-			width: 380px;
-			text-align: center;
-			margin: 0 auto 0 auto;
+		.work__dates {
+			@include responsive-modifier--narrow;
 		}
-		.references {
-			width: 768px;
-			text-align: center;
-			margin: 0 auto 0 auto;
+		.work__references {
+			@include responsive-modifier--wide;
 		}
-		#profile-picture {
+		#left-column__pic {
 			margin: 65px 30px 0px 8px;
 			max-width: 80px;
 			float: right;
 		}
-
 		ul {
 			display: flex;
+			flex-flow: row-reverse wrap;
 			padding-left: 0;
 			margin-left: 10px;
-			flex-flow: row-reverse wrap;
 			justify-content: space-between;
 		}
 		li {
@@ -241,26 +366,38 @@ hr {
 		}
 }
 
-.project-parent {
-	display: flex;
-	flex-flow: row wrap;
-	width: 400px;
-	margin-top: 50px;
-	text-align: center;
+/*------------------------------------*\
+    $CAROUSEL
+\*------------------------------------*/
+.carousel{
+	overflow:hidden;
+	width:100%;
+}
+.panes{
+	list-style:none;
+	position:relative;
+	width:200%; /* Number of panes * 100% */
+	overflow:hidden; /* This is used solely to clear floats, it does not add functionality. */
+	animation: carousel 10s infinite;
+}
+.panes > li{
+	position:relative;
+	float:left;
+	width:50%; /* 100 / number of panes */
 }
 
-.proj-img {
-	max-height: 180px;
-	padding: 10px;
-}
+@keyframes carousel{
+	0%   { left: +100%; }
+	10%   { left: 0%; }
+	45%   { left: 0; }
+	55% 	{ left: -100%; }
+	90% 	{ left: -100%; }
+	100%  { left: -230%; }
+	}
 
-.project h1 {
-	margin-top: 0px;
-	width: 160px;
-	font-size: 12px;
-	color: white;
-	background-color: #105A97;
-	padding: 4px;
-	margin-left: auto;
-  margin-right: auto;
-}
+// 0%    { transform: translateX(-50%); }
+// 10%   { transform: translateX(100%); }
+// 45%   { transform: translateX(100%); }
+// 55% 	{ transform: translateX(20%); }
+// 90% 	{ transform: translateX(20%); }
+// 100%  { transform: translateX(50%); }
