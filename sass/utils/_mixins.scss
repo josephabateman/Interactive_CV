@@ -1,0 +1,33 @@
+// flex mixins
+@mixin flex__column-wrap {
+	display: flex;
+	flex-flow: column wrap;
+}
+@mixin flex__row-wrap {
+	display: flex;
+	flex-flow: row wrap;
+}
+// responsive layouts
+@mixin responsive-modifier--narrow {
+	width: 380px;
+	text-align: center;
+	margin: 0 auto 0 auto;
+}
+@mixin responsive-modifier--wide {
+	width: 768px;
+	text-align: center;
+	margin: 0 auto 0 auto;
+}
+
+// text styles
+@mixin main-header--style {
+	background-color: $h3-background-color;
+	color: $personal-h3-color;
+	}
+@mixin header--normal-uppercase {
+	font-weight: normal;
+	text-transform: uppercase;
+}
+@mixin default-fonts {
+	font-family: sans-serif, verdana, arial;
+}

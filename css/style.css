@@ -130,13 +130,15 @@ div:nth-child(5) {
 .nav-bar {
   font-weight: normal;
   text-transform: uppercase;
-  text-align: right;
+  text-align: left;
   list-style-type: none;
   margin-top: 30px;
+  background-color: #E7E7E7;
+  padding: 3px 10px;
 }
 
 .nav-bar li {
-  margin-bottom: 10px;
+  margin: 10px 0 10px 0;
 }
 
 .nav-bar a {
@@ -145,7 +147,7 @@ div:nth-child(5) {
   color: #105A97;
 }
 .nav-bar a:hover {
-  color: orange;
+  color: #86D6FC;
 }
 
 .work {
