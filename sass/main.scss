@@ -1,5 +1,16 @@
 @import "./utils/variables";
 @import "./utils/mixins";
+@import "./layouts/form";
+
+$breakpoints: (
+    mobile: 768px
+);
+
+@mixin mobile-only {
+	@media screen and (max-width: map-get($breakpoints, mobile)){
+			@content;
+	}
+}
 
 body {
 	@include default-fonts;
@@ -12,6 +23,11 @@ body {
 	display: grid;
 	grid-template-columns: auto auto;
 	justify-content: center;
+	@include mobile-only {
+		display: unset;
+			width: auto;
+			padding: 5px;
+	}
 }
 
 // desktop, left flexbox
@@ -22,87 +38,114 @@ body {
 	justify-content: space-between;
 	text-align: center;
 	background-color: $personal-background-color;
-}
-
-.left-column__header {
-	display: block;
-	padding: 3px 0 3px 0;
-	@include main-header--style;
-	@include header--normal-uppercase;
-}
-
-#left-column__contact ul {
-	text-align: left;
-	list-style-type: none;
-}
-
-ul div {
-	margin-bottom: 10px;
-
-	overflow: hidden;
-	width: 0;
-	animation: type 5s steps(60, end) forwards;
-	
-  }
-  div:nth-child(1) {
-	animation-delay: 0s;
-  }
-  div:nth-child(2) {
-	animation-delay: 1s;
-  }
-  div:nth-child(3) {
-	animation-delay: 2s;
-  }
-  div:nth-child(4) {
-	animation-delay: 4s;
-  }
-  div:nth-child(5) {
-	animation-delay: 5s;
-  }
- 
-  @keyframes type {
-	0% {
-	  opacity: 0.1;
+	@include mobile-only {
+		width: auto;
+		background-color: $personal-h3-color;
 	}
-	100% {
-	  width: 100%;
-	  opacity: 5;
+		.left-column__header {
+			display: block;
+			padding: 3px 0 3px 0;
+			@include main-header--style;
+			@include header--normal-uppercase;
+		}
+}
+		#left-column__contact ul {
+			text-align: left;
+			list-style-type: none;
+		}
+
+@include mobile-only {
+	ul {
+		display: flex;
+		flex-flow: row-reverse wrap;
+		padding-left: 0;
+		margin-left: 10px;
+		justify-content: space-between;
 	}
-  }
-  
-
-#left-column__pic {
-	margin-top: 20px;
-	max-height: 135px;
-	border: 3px solid grey;
-	border-radius: 50%;
-
-	animation-duration: 1s;
-	animation-name: bounce;
-	overflow: hidden;
 }
 
-@keyframes bounce {
-	0% {
-	  margin-left: 40%;
+@include mobile-only {
+	li {
+		width: 200px;
 	}
-	25% {
-	  margin-right: 40%;
-	}
-	50% {
-		margin-left: 20%;
-	  }
-	100% {
-		margin-right: 0%;
-	  }
-  }
-
-
-.left-column p {
-	margin: 0px 15px;
-	text-align: justify;
- 	text-justify: inter-word;
 }
+
+@include mobile-only {
+	#left-column__about {
+		display: none;
+	}
+}		
+
+		ul div {
+			margin-bottom: 10px;
+			overflow: hidden;
+			width: 0;
+			animation: type 5s steps(60, end) forwards;
+			}
+			
+			div:nth-child(1) {
+			animation-delay: 0s;
+			}
+			div:nth-child(2) {
+			animation-delay: 1s;
+			}
+			div:nth-child(3) {
+			animation-delay: 2s;
+			}
+			div:nth-child(4) {
+			animation-delay: 4s;
+			}
+			div:nth-child(5) {
+			animation-delay: 5s;
+			}
+		 
+			@keyframes type {
+			0% {
+				opacity: 0.1;
+			}
+			100% {
+				width: 100%;
+				opacity: 5;
+			}
+		}
+		
+		#left-column__pic {
+			margin-top: 20px;
+			max-height: 135px;
+			border: 3px solid grey;
+			border-radius: 50%;
+			@include mobile-only {
+					margin: 65px 30px 0px 8px;
+					max-width: 80px;
+					float: right;
+				
+			}
+		
+			animation-duration: 1s;
+			animation-name: bounce;
+			overflow: hidden;
+		}
+		
+		@keyframes bounce {
+			0% {
+				margin-left: 40%;
+			}
+			25% {
+				margin-right: 40%;
+			}
+			50% {
+				margin-left: 20%;
+				}
+			100% {
+				margin-right: 0%;
+				}
+			}
+		
+		.left-column p {
+			margin: 0px 15px;
+			text-align: justify;
+			 text-justify: inter-word;
+		}
 
 // desktop, right flexbox
 .right-column {
@@ -111,8 +154,18 @@ ul div {
 	grid-column-start: 2;
 	@include flex__row-wrap;
 	justify-content: space-between;
-	
 	background-color: $personal-h3-color;
+	@include mobile-only {
+			width: auto;
+			padding: 0 5px 0 5px;
+			margin: $margin-top--small-centered;
+		}
+}
+
+@include mobile-only {
+	.right-column h5 {
+		color: $h3-background-color;
+	}	
 }
 
 // title
@@ -129,6 +182,11 @@ ul div {
 }
 #freela {
 	border-bottom: 1.2px solid $personal-background-color
+}
+@include mobile-only {
+	.right-column__title {
+		@include responsive-modifier--wide;
+			}
 }
 
 .nav-bar {
@@ -156,19 +214,32 @@ ul div {
 	margin: 30px 0px -6px 0px;
 	width: 427px;
 	border-bottom: 1.2px solid $personal-background-color;
+	@include mobile-only {
+			margin: $margin-top--small-centered;
+			text-align: center;
+		}
 }
 
 .work__dates {
 	width: 100px;
+	@include mobile-only {
+			@include responsive-modifier--narrow;
+		}
 }
 
 .work__description {
 	width: 300px;
+	@include mobile-only {
+			@include responsive-modifier--narrow;
+				}
 }
 
 .work__references {
 	width: 180px;
 	line-height: 1.5em;
+	@include mobile-only {
+			@include responsive-modifier--wide;
+		}
 }
 
 .work__references--name {
@@ -225,16 +296,19 @@ hr {
 	}
 }
 
-.left-column__hobbies {
-	@include flex__column-wrap;
-	justify-content: space-between;
-}
-
 .left-column__hobbies-icons {
 	display: flex;
 	flex-direction: row;
 	margin: 0px 25px 20px 20px;
 	justify-content: space-between;
+}
+
+.left-column__hobbies {
+	@include flex__column-wrap;
+	justify-content: space-between;
+	@include mobile-only {
+		display: none;
+		}
 }
 
 .work-icon {
@@ -271,67 +345,7 @@ hr {
 		}
 }
 
-// tablet media query rules 
-@media all and (max-width: 768px) {
-	.grid {
-		display: unset;
-		width: auto;
-		padding: 5px;
-	}
-	.left-column {
-		width: auto;
-		background-color: $personal-h3-color;
-	}
-	.left-column__hobbies  {
-		display: none;
-	}
-	#left-column__about {
-		display: none;
-	}
-	.right-column h5 {
-		color: $h3-background-color;
-		}
-	.work {
-		margin: $margin-top--small-centered;
-		text-align: center;
-	}
-	.right-column {
-		width: auto;
-		padding: 0 5px 0 5px;
-		margin: $margin-top--small-centered;
-	}
-	.right-column__title {
-		@include responsive-modifier--wide;
-			}
-	.work__description {
-		@include responsive-modifier--narrow;
-			}
-		.work__dates {
-			@include responsive-modifier--narrow;
-		}
-		.work__references {
-			@include responsive-modifier--wide;
-		}
-		#left-column__pic {
-			margin: 65px 30px 0px 8px;
-			max-width: 80px;
-			float: right;
-		}
-		ul {
-			display: flex;
-			flex-flow: row-reverse wrap;
-			padding-left: 0;
-			margin-left: 10px;
-			justify-content: space-between;
-		}
-		li {
-			width: 200px;
-		}
-}
-
-/*------------------------------------*\
-    $CAROUSEL
-\*------------------------------------*/
+// Carousel
 .carousel{
 	overflow:hidden;
 	width:100%;
@@ -350,7 +364,7 @@ hr {
 }
 
 @keyframes carousel{
-	0%   { left: +100%; }
+	0%   	{ left: +100%; }
 	10%   { left: 0%; }
 	45%   { left: 0; }
 	55% 	{ left: -100%; }

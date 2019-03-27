@@ -9,6 +9,13 @@ body {
   grid-template-columns: auto auto;
   justify-content: center;
 }
+@media screen and (max-width: 768px) {
+  .grid {
+    display: unset;
+    width: auto;
+    padding: 5px;
+  }
+}
 
 .left-column {
   grid-column-start: 1;
@@ -19,8 +26,13 @@ body {
   text-align: center;
   background-color: #86D6FC;
 }
-
-.left-column__header {
+@media screen and (max-width: 768px) {
+  .left-column {
+    width: auto;
+    background-color: white;
+  }
+}
+.left-column .left-column__header {
   display: block;
   padding: 3px 0 3px 0;
   background-color: #105A97;
@@ -34,6 +46,25 @@ body {
   list-style-type: none;
 }
 
+@media screen and (max-width: 768px) {
+  ul {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    padding-left: 0;
+    margin-left: 10px;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 768px) {
+  li {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #left-column__about {
+    display: none;
+  }
+}
 ul div {
   margin-bottom: 10px;
   overflow: hidden;
@@ -79,6 +110,13 @@ div:nth-child(5) {
   animation-name: bounce;
   overflow: hidden;
 }
+@media screen and (max-width: 768px) {
+  #left-column__pic {
+    margin: 65px 30px 0px 8px;
+    max-width: 80px;
+    float: right;
+  }
+}
 
 @keyframes bounce {
   0% {
@@ -109,7 +147,19 @@ div:nth-child(5) {
   justify-content: space-between;
   background-color: white;
 }
+@media screen and (max-width: 768px) {
+  .right-column {
+    width: auto;
+    padding: 0 5px 0 5px;
+    margin: 30px auto 0 auto;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .right-column h5 {
+    color: #105A97;
+  }
+}
 #joseph {
   color: #86D6FC;
   transition-property: color;
@@ -127,6 +177,13 @@ div:nth-child(5) {
   border-bottom: 1.2px solid #86D6FC;
 }
 
+@media screen and (max-width: 768px) {
+  .right-column__title {
+    width: 768px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
+}
 .nav-bar {
   font-weight: normal;
   text-transform: uppercase;
@@ -155,18 +212,45 @@ div:nth-child(5) {
   width: 427px;
   border-bottom: 1.2px solid #86D6FC;
 }
+@media screen and (max-width: 768px) {
+  .work {
+    margin: 30px auto 0 auto;
+    text-align: center;
+  }
+}
 
 .work__dates {
   width: 100px;
+}
+@media screen and (max-width: 768px) {
+  .work__dates {
+    width: 380px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
 }
 
 .work__description {
   width: 300px;
 }
+@media screen and (max-width: 768px) {
+  .work__description {
+    width: 380px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
+}
 
 .work__references {
   width: 180px;
   line-height: 1.5em;
+}
+@media screen and (max-width: 768px) {
+  .work__references {
+    width: 768px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
 }
 
 .work__references--name {
@@ -225,17 +309,22 @@ hr {
   border-radius: 10%;
 }
 
-.left-column__hobbies {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-}
-
 .left-column__hobbies-icons {
   display: flex;
   flex-direction: row;
   margin: 0px 25px 20px 20px;
   justify-content: space-between;
+}
+
+.left-column__hobbies {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .left-column__hobbies {
+    display: none;
+  }
 }
 
 .work-icon {
@@ -272,86 +361,6 @@ hr {
   height: 150px;
 }
 
-@media all and (max-width: 768px) {
-  .grid {
-    display: unset;
-    width: auto;
-    padding: 5px;
-  }
-
-  .left-column {
-    width: auto;
-    background-color: white;
-  }
-
-  .left-column__hobbies {
-    display: none;
-  }
-
-  #left-column__about {
-    display: none;
-  }
-
-  .right-column h5 {
-    color: #105A97;
-  }
-
-  .work {
-    margin: 30px auto 0 auto;
-    text-align: center;
-  }
-
-  .right-column {
-    width: auto;
-    padding: 0 5px 0 5px;
-    margin: 30px auto 0 auto;
-  }
-
-  .right-column__title {
-    width: 768px;
-    text-align: center;
-    margin: 0 auto 0 auto;
-  }
-
-  .work__description {
-    width: 380px;
-    text-align: center;
-    margin: 0 auto 0 auto;
-  }
-
-  .work__dates {
-    width: 380px;
-    text-align: center;
-    margin: 0 auto 0 auto;
-  }
-
-  .work__references {
-    width: 768px;
-    text-align: center;
-    margin: 0 auto 0 auto;
-  }
-
-  #left-column__pic {
-    margin: 65px 30px 0px 8px;
-    max-width: 80px;
-    float: right;
-  }
-
-  ul {
-    display: flex;
-    flex-flow: row-reverse wrap;
-    padding-left: 0;
-    margin-left: 10px;
-    justify-content: space-between;
-  }
-
-  li {
-    width: 200px;
-  }
-}
-/*------------------------------------*\
-    $CAROUSEL
-\*------------------------------------*/
 .carousel {
   overflow: hidden;
   width: 100%;
