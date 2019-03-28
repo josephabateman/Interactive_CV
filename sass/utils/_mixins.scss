@@ -33,3 +33,8 @@
 }
 
 // breakpoints
+@mixin mobile-only {
+	@media screen and (max-width: map-get($breakpoints, mobile)){
+			@content;
+	}
+}
