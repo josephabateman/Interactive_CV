@@ -20,98 +20,6 @@ body {
 	}
 }
 
-// desktop, left flexbox
-.left-column {
-	grid-column-start: 1;
-	width: 237px;
-	@include flex__column-wrap;
-	justify-content: space-between;
-	text-align: center;
-	background-color: $personal-background-color;
-	@include mobile-only {
-		width: auto;
-		background-color: $personal-h3-color;
-	}
-		.left-column__header {
-			display: block;
-			padding: 3px 0 3px 0;
-			@include main-header--style;
-			@include header--normal-uppercase;
-		}
-}
-		#left-column__contact ul {
-			text-align: left;
-			list-style-type: none;
-		}
-
-@include mobile-only {
-	ul {
-		display: flex;
-		flex-flow: row-reverse wrap;
-		padding-left: 0;
-		margin-left: 10px;
-		justify-content: space-between;
-	}
-}
-
-@include mobile-only {
-	li {
-		width: 200px;
-	}
-}
-
-@include mobile-only {
-	#left-column__about {
-		display: none;
-	}
-}		
-
-		ul div {
-			margin-bottom: 10px;
-			overflow: hidden;
-			width: 0;
-			animation: type 5s steps(60, end) forwards;
-			}
-			
-			div:nth-child(1) {
-			animation-delay: 0s;
-			}
-			div:nth-child(2) {
-			animation-delay: 1s;
-			}
-			div:nth-child(3) {
-			animation-delay: 2s;
-			}
-			div:nth-child(4) {
-			animation-delay: 4s;
-			}
-			div:nth-child(5) {
-			animation-delay: 5s;
-			}
-		 
-			@keyframes type {
-			0% {
-				opacity: 0.1;
-			}
-			100% {
-				width: 100%;
-				opacity: 5;
-			}
-		}
-		
-		#left-column__pic {
-			margin-top: 20px;
-			max-height: 135px;
-			border: 3px solid grey;
-			border-radius: 50%;
-			@include mobile-only {
-					margin: 65px 30px 0px 8px;
-					max-width: 80px;
-					float: right;
-				
-			}
-		
-
 // desktop, right flexbox
 .right-column {
 	width: 427px;
@@ -155,22 +63,23 @@ body {
 }
 
 .nav-bar {
+	@include flex__row-wrap;
+   justify-content: space-evenly;
 	@include header--normal-uppercase;
-	text-align: left;
+	text-align: center;
 	list-style-type: none;
-	margin-top: 30px;
-	background-color: $off-personal-h3-color;
-	padding: 3px 10px;
-
+	background-color: $h3-background-color;
 }
 	.nav-bar li	{
-			margin: 10px 0 10px 0;
+		display: inline;
+		text-align: center;
+		margin: 10px -20%;
 		}
 
 		.nav-bar a	{
 			font-family: roboto slab;
 			text-decoration: none;
-			color: $h3-background-color;
+			color: $personal-h3-color;
 			&:hover {color: $personal-background-color;}
 		}
 
@@ -285,16 +194,19 @@ hr {
 // portfolio
 .portfolio {
 	@include flex__row-wrap;
-	margin-top: 100px;
+   justify-content: space-evenly;
+	margin: 100px;
 		.portfolio__child {
-			width: 200px;
+			width: 300px;
 			text-align: center;	
+			margin: 0 5%;
+
 		}
 		h1 {
 			font-size: 14px;
-			width: 75%;
+			
 			@include main-header--style;
-			padding: 3px 0 3px 0;
+			padding: 10px 0;
 			margin: -3px auto 40px auto;
 
 			background: $h3-background-color;
@@ -306,7 +218,7 @@ hr {
 	  		}
 		}
 		.portfolio__img {
-			height: 150px;
+			width: 300px;
 		}
 }
 
@@ -343,3 +255,8 @@ hr {
 // 55% 	{ transform: translateX(20%); }
 // 90% 	{ transform: translateX(20%); }
 // 100%  { transform: translateX(50%); }
+		
+
+.hamster-project {
+	margin: 0 auto;
+}

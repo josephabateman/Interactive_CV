@@ -1,22 +1,3 @@
-body {
-  font-family: sans-serif, verdana, arial;
-  font-size: 12px;
-  background-color: #E7E7E7;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: center;
-}
-@media screen and (max-width: 768px) {
-  .grid {
-    display: unset;
-    width: auto;
-    padding: 5px;
-  }
-}
-
 .left-column {
   grid-column-start: 1;
   width: 237px;
@@ -138,6 +119,25 @@ div:nth-child(5) {
   text-justify: inter-word;
 }
 
+body {
+  font-family: sans-serif, verdana, arial;
+  font-size: 12px;
+  background-color: #E7E7E7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .grid {
+    display: unset;
+    width: auto;
+    padding: 5px;
+  }
+}
+
 .right-column {
   width: 427px;
   padding: 0 35px 0 35px;
@@ -185,23 +185,26 @@ div:nth-child(5) {
   }
 }
 .nav-bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
   font-weight: normal;
   text-transform: uppercase;
-  text-align: left;
+  text-align: center;
   list-style-type: none;
-  margin-top: 30px;
-  background-color: #E7E7E7;
-  padding: 3px 10px;
+  background-color: #105A97;
 }
 
 .nav-bar li {
-  margin: 10px 0 10px 0;
+  display: inline;
+  text-align: center;
+  margin: 10px -20%;
 }
 
 .nav-bar a {
   font-family: roboto slab;
   text-decoration: none;
-  color: #105A97;
+  color: white;
 }
 .nav-bar a:hover {
   color: #86D6FC;
@@ -336,18 +339,19 @@ hr {
 .portfolio {
   display: flex;
   flex-flow: row wrap;
-  margin-top: 100px;
+  justify-content: space-evenly;
+  margin: 100px;
 }
 .portfolio .portfolio__child {
-  width: 200px;
+  width: 300px;
   text-align: center;
+  margin: 0 5%;
 }
 .portfolio h1 {
   font-size: 14px;
-  width: 75%;
   background-color: #105A97;
   color: white;
-  padding: 3px 0 3px 0;
+  padding: 10px 0;
   margin: -3px auto 40px auto;
   background: #105A97;
   transition-property: background;
@@ -358,7 +362,7 @@ hr {
   background: #bd4c01;
 }
 .portfolio .portfolio__img {
-  height: 150px;
+  width: 300px;
 }
 
 .carousel {
@@ -402,6 +406,9 @@ hr {
   100% {
     left: -230%;
   }
+}
+.hamster-project {
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
