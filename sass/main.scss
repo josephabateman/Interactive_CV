@@ -195,26 +195,25 @@ hr {
 .portfolio {
 	@include flex__row-wrap;
    justify-content: space-evenly;
-	margin: 100px;
-		.portfolio__child {
+   align-content: center;
+   a {text-decoration:none;}	
+			.portfolio__child {			
+			display: inline;
 			width: 300px;
 			text-align: center;	
-			margin: 0 5%;
-
+			margin: 50px 5%;
 		}
 		h1 {
 			font-size: 14px;
-			
 			@include main-header--style;
 			padding: 10px 0;
-			margin: -3px auto 40px auto;
-
+			margin: -3px auto 0 auto;
 			background: $h3-background-color;
 			transition-property: background;
 			transition-duration: 2s;
 			transition-timing-function: linear;
 			&:hover {
-			background: #bd4c01;
+			background: #bd4c01;		
 	  		}
 		}
 		.portfolio__img {
@@ -257,6 +256,15 @@ hr {
 // 100%  { transform: translateX(50%); }
 		
 
-.hamster-project {
+.content {
 	margin: 0 auto;
+	width: 90%;
+	background-color: $personal-h3-color;
+}
+
+.index-name {
+	margin-left: 5%;
+	@include mobile-only {
+		display: none;
+		}
 }

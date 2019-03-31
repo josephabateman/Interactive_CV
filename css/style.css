@@ -340,19 +340,23 @@ hr {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  margin: 100px;
+  align-content: center;
+}
+.portfolio a {
+  text-decoration: none;
 }
 .portfolio .portfolio__child {
+  display: inline;
   width: 300px;
   text-align: center;
-  margin: 0 5%;
+  margin: 50px 5%;
 }
 .portfolio h1 {
   font-size: 14px;
   background-color: #105A97;
   color: white;
   padding: 10px 0;
-  margin: -3px auto 40px auto;
+  margin: -3px auto 0 auto;
   background: #105A97;
   transition-property: background;
   transition-duration: 2s;
@@ -407,8 +411,19 @@ hr {
     left: -230%;
   }
 }
-.hamster-project {
+.content {
   margin: 0 auto;
+  width: 90%;
+  background-color: white;
+}
+
+.index-name {
+  margin-left: 5%;
+}
+@media screen and (max-width: 768px) {
+  .index-name {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
