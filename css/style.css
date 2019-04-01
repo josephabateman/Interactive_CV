@@ -7,7 +7,7 @@
   text-align: center;
   background-color: #86D6FC;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .left-column {
     width: auto;
     background-color: white;
@@ -27,7 +27,7 @@
   list-style-type: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   ul {
     display: flex;
     flex-flow: row-reverse wrap;
@@ -36,12 +36,12 @@
     justify-content: space-between;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   li {
     width: 200px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   #left-column__about {
     display: none;
   }
@@ -91,7 +91,7 @@ div:nth-child(5) {
   animation-name: bounce;
   overflow: hidden;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   #left-column__pic {
     margin: 65px 30px 0px 8px;
     max-width: 80px;
@@ -130,7 +130,7 @@ body {
   grid-template-columns: auto auto;
   justify-content: center;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .grid {
     display: unset;
     width: auto;
@@ -147,7 +147,7 @@ body {
   justify-content: space-between;
   background-color: white;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .right-column {
     width: auto;
     padding: 0 5px 0 5px;
@@ -155,7 +155,7 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .right-column h5 {
     color: #105A97;
   }
@@ -177,13 +177,6 @@ body {
   border-bottom: 1.2px solid #86D6FC;
 }
 
-@media screen and (max-width: 768px) {
-  .right-column__title {
-    width: 768px;
-    text-align: center;
-    margin: 0 auto 0 auto;
-  }
-}
 .nav-bar {
   display: flex;
   flex-flow: row wrap;
@@ -215,7 +208,7 @@ body {
   width: 427px;
   border-bottom: 1.2px solid #86D6FC;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .work {
     margin: 30px auto 0 auto;
     text-align: center;
@@ -225,7 +218,7 @@ body {
 .work__dates {
   width: 100px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .work__dates {
     width: 380px;
     text-align: center;
@@ -236,7 +229,7 @@ body {
 .work__description {
   width: 300px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .work__description {
     width: 380px;
     text-align: center;
@@ -248,7 +241,7 @@ body {
   width: 180px;
   line-height: 1.5em;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .work__references {
     width: 768px;
     text-align: center;
@@ -324,7 +317,7 @@ hr {
   flex-flow: column wrap;
   justify-content: space-between;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .left-column__hobbies {
     display: none;
   }
@@ -347,9 +340,13 @@ hr {
 }
 .portfolio .portfolio__child {
   display: inline;
-  width: 300px;
   text-align: center;
-  margin: 50px 5%;
+  margin: 20px;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
 }
 .portfolio h1 {
   font-size: 14px;
@@ -366,7 +363,17 @@ hr {
   background: #bd4c01;
 }
 .portfolio .portfolio__img {
-  width: 300px;
+  width: 470px;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.portfolio__child:hover .portfolio__img {
+  opacity: 0.3;
 }
 
 .carousel {
@@ -411,19 +418,53 @@ hr {
     left: -230%;
   }
 }
-.content {
-  margin: 0 auto;
-  width: 90%;
+.index-name {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
   background-color: white;
 }
-
-.index-name {
+#index-pic {
+  display: inline-block;
   margin-left: 5%;
 }
+
+ul li {
+  display: inline;
+}
+
+.highend-screenshot__img {
+  width: 680px;
+  margin: 30px auto;
+  display: block;
+  border: 5px solid black;
+  border-style: dotted;
+}
 @media screen and (max-width: 768px) {
-  .index-name {
-    display: none;
+  .highend-screenshot__img {
+    width: 90%;
   }
+}
+
+.placeholder-content p {
+  margin: 0 auto;
+  width: 60%;
+  font-size: 1.3em;
+}
+@media screen and (max-width: 768px) {
+  .placeholder-content p {
+    width: 90%;
+  }
+}
+
+.index-contact {
+  margin: 20px auto;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

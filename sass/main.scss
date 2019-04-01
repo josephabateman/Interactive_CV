@@ -56,11 +56,7 @@ body {
 #freela {
 	border-bottom: 1.2px solid $personal-background-color
 }
-@include mobile-only {
-	.right-column__title {
-		@include responsive-modifier--wide;
-			}
-}
+
 
 .nav-bar {
 	@include flex__row-wrap;
@@ -199,9 +195,14 @@ hr {
    a {text-decoration:none;}	
 			.portfolio__child {			
 			display: inline;
-			width: 300px;
 			text-align: center;	
-			margin: 50px 5%;
+			margin: 20px;
+
+			opacity: 1;
+			display: block;
+			height: auto;
+			transition: .5s ease;
+			backface-visibility: hidden;			
 		}
 		h1 {
 			font-size: 14px;
@@ -217,9 +218,19 @@ hr {
 	  		}
 		}
 		.portfolio__img {
-			width: 300px;
+			width: 470px;
+			opacity: 1;
+			display: block;
+			width: 100%;
+			height: auto;
+			transition: .5s ease;
+			backface-visibility: hidden;
 		}
 }
+
+.portfolio__child:hover .portfolio__img {
+	opacity: 0.3;
+  }
 
 // Carousel
 .carousel{
@@ -254,17 +265,52 @@ hr {
 // 55% 	{ transform: translateX(20%); }
 // 90% 	{ transform: translateX(20%); }
 // 100%  { transform: translateX(50%); }
-		
-
-.content {
-	margin: 0 auto;
-	width: 90%;
-	background-color: $personal-h3-color;
-}
 
 .index-name {
-	margin-left: 5%;
-	@include mobile-only {
-		display: none;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	background-color: $personal-h3-color;
+	@include tablet-only {
+		
 		}
+}
+
+#index-pic {
+	display: inline-block;
+	margin-left: 5%;
+}
+
+ ul li {
+	display: inline;
+}
+
+.highend-screenshot__img {
+	width: 680px;
+	margin: 30px auto;
+	display: block;
+	border: 5px solid black;
+	border-style: dotted;
+	@include tablet-only {
+		width: 90%;
+		}
+}
+
+.placeholder-content p {
+	margin: 0 auto;
+	width: 60%;
+	font-size: 1.3em;
+	@include tablet-only {
+		width: 90%;
+		}
+}
+
+.index-contact {
+	margin: 20px auto;
+	width: 90%;
+	text-align: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	background-color: $personal-h3-color;
 }
