@@ -46,7 +46,7 @@
     display: none;
   }
 }
-ul div {
+.left-column__contact__ul div {
   margin-bottom: 10px;
   overflow: hidden;
   width: 0;
@@ -185,22 +185,46 @@ body {
   text-transform: uppercase;
   text-align: center;
   list-style-type: none;
+  margin: 0 0 5px 0;
+  padding: 0;
+  overflow: hidden;
   background-color: #105A97;
 }
-
 .nav-bar li {
   display: inline;
   text-align: center;
-  margin: 10px -20%;
+  width: auto;
 }
-
-.nav-bar a {
-  font-family: roboto slab;
-  text-decoration: none;
+.nav-bar li a, .nav-bar .dropbtn {
+  display: inline-block;
   color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
-.nav-bar a:hover {
+.nav-bar li a:hover, .nav-bar .dropdown:hover .dropbtn {
   color: #86D6FC;
+}
+.nav-bar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.nav-bar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.nav-bar .dropdown-content a:hover {
+  background-color: #105A97;
+}
+.nav-bar .dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .work {
@@ -243,7 +267,7 @@ body {
 }
 @media screen and (max-width: 450px) {
   .work__references {
-    width: 768px;
+    width: 380px;
     text-align: center;
     margin: 0 auto 0 auto;
   }
@@ -429,10 +453,6 @@ hr {
   margin-left: 5%;
 }
 
-ul li {
-  display: inline;
-}
-
 .highend-screenshot__img {
   width: 680px;
   margin: 30px auto;
@@ -459,12 +479,39 @@ ul li {
 
 .index-contact {
   margin: 20px auto;
-  width: 90%;
+  width: auto;
   text-align: center;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: white;
+}
+.index-contact li {
+  margin: 5px;
+}
+
+.index-info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: auto;
+  margin: 20px auto;
+  background-color: white;
+}
+.index-info__container {
+  font-size: 1.3em;
+  margin: 20px auto;
+  width: 400px;
+  padding: 0 5px;
+}
+.index-info__container h2 {
+  font-size: 1.6em;
+  margin-top: 20px;
+  text-decoration-line: underline;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=style.css.map */

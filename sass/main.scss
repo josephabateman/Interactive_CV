@@ -64,20 +64,55 @@ body {
 	@include header--normal-uppercase;
 	text-align: center;
 	list-style-type: none;
+	margin: 0 0 5px 0;
+	padding: 0;
+	overflow: hidden;
 	background-color: $h3-background-color;
-}
-	.nav-bar li	{
+
+	li {
 		display: inline;
 		text-align: center;
-		margin: 10px -20%;
-		}
+		width: auto;
 
-		.nav-bar a	{
-			font-family: roboto slab;
-			text-decoration: none;
-			color: $personal-h3-color;
-			&:hover {color: $personal-background-color;}
+	  }
+	  
+	  li a, .dropbtn {
+		display: inline-block;
+		color: $personal-h3-color;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	  }
+	  
+	  li a:hover, .dropdown:hover .dropbtn {
+		color: $personal-background-color;
+	  }
+	  
+	  .dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: $personal-h3-color;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	  }
+	  
+	  .dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		text-align: left;
+	  }
+	  
+	  .dropdown-content a:hover {
+		  background-color: $h3-background-color;
 		}
+	  
+	  .dropdown:hover .dropdown-content {
+		display: block;
+	  }
+  }
 
 // work, work__dates, work__references
 .work {
@@ -108,7 +143,7 @@ body {
 	width: 180px;
 	line-height: 1.5em;
 	@include mobile-only {
-			@include responsive-modifier--wide;
+			@include responsive-modifier--narrow;
 		}
 }
 
@@ -281,9 +316,9 @@ hr {
 	margin-left: 5%;
 }
 
- ul li {
-	display: inline;
-}
+//  ul li {
+// 	display: inline;
+// }
 
 .highend-screenshot__img {
 	width: 680px;
@@ -307,10 +342,38 @@ hr {
 
 .index-contact {
 	margin: 20px auto;
-	width: 90%;
+	width: auto;
 	text-align: center;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	background-color: $personal-h3-color;
+		li {
+			margin: 5px;
+		}
 }
+
+.index-info {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	width: auto;
+	margin: 20px auto;
+	background-color: $personal-h3-color; 
+		
+		&__container {
+			h2 {
+				font-size: 1.6em;
+				margin-top: 20px;
+				text-decoration-line: underline;
+			}
+			font-size: 1.3em;
+			margin: 20px auto;
+			width: 400px;	
+			padding: 0 5px;
+			}
+}
+
+  ul {
+	list-style-type: none;
+  }
