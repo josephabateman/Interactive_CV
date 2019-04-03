@@ -42,6 +42,11 @@ body {
 }
 
 // title
+
+.right-column__title {
+	display: block;
+	width: 100%;
+}
 #joseph {
 	color: $personal-background-color;
 			transition-property: color;
@@ -306,7 +311,7 @@ hr {
 	width: 100%;
 	text-align: center;
 	background-color: $personal-h3-color;
-	@include tablet-only {
+	@include mobile-only {
 		
 		}
 }
@@ -326,7 +331,7 @@ hr {
 	display: block;
 	border: 5px solid black;
 	border-style: dotted;
-	@include tablet-only {
+	@include mobile-only {
 		width: 90%;
 		}
 }
@@ -335,7 +340,7 @@ hr {
 	margin: 0 auto;
 	width: 60%;
 	font-size: 1.3em;
-	@include tablet-only {
+	@include mobile-only {
 		width: 90%;
 		}
 }
