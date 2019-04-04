@@ -244,7 +244,8 @@ hr {
 			transition: .5s ease;
 			backface-visibility: hidden;			
 		}
-		h1 {
+		h3 {
+			display: block;
 			font-size: 14px;
 			@include main-header--style;
 			padding: 10px 0;
@@ -354,8 +355,12 @@ hr {
 	justify-content: space-between;
 	background-color: $personal-h3-color;
 		li {
-			margin: 5px;
+			margin: auto;
+			padding: 3%;
+			@include mobile-only {
+		width: auto;
 		}
+	}
 }
 
 .index-info {
