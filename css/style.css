@@ -288,41 +288,6 @@ body {
   padding: 2px 30px;
 }
 
-h1 {
-  margin-top: 50px;
-  font-size: 32px;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-
-h2 {
-  margin-top: -20px;
-  font-size: 18px;
-  font-weight: normal;
-}
-
-h3 {
-  display: inline;
-  font-weight: normal;
-  text-transform: uppercase;
-  font-size: 1.5em;
-}
-
-h4 {
-  margin-bottom: -8px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-h5 {
-  margin-bottom: -8px;
-  font-weight: normal;
-}
-
-hr {
-  border-top: 1px solid #86D6FC;
-}
-
 .left-column__hobbies-icons i {
   padding: 8px;
   border: 1.5px solid #105A97;
@@ -401,8 +366,7 @@ hr {
   transition: 0.5s ease;
   backface-visibility: hidden;
 }
-
-.portfolio__child:hover .portfolio__img {
+.portfolio .portfolio__child:hover .portfolio__img {
   opacity: 0.3;
 }
 
@@ -410,24 +374,18 @@ hr {
   overflow: hidden;
   width: 100%;
 }
-
-.panes {
+.carousel .panes {
   list-style: none;
   position: relative;
   width: 200%;
-  /* Number of panes * 100% */
   overflow: hidden;
-  /* This is used solely to clear floats, it does not add functionality. */
   animation: carousel 10s infinite;
 }
-
-.panes > li {
+.carousel .panes > li {
   position: relative;
   float: left;
   width: 50%;
-  /* 100 / number of panes */
 }
-
 @keyframes carousel {
   0% {
     left: 100%;
@@ -448,13 +406,14 @@ hr {
     left: -230%;
   }
 }
+
 .index-name {
   display: inline-block;
   width: 100%;
   text-align: center;
   background-color: white;
 }
-#index-pic {
+.index-name #index-pic {
   display: inline-block;
   margin-left: 5%;
 }
@@ -522,8 +481,43 @@ hr {
   text-decoration-line: underline;
 }
 
+h1 {
+  margin-top: 50px;
+  font-size: 32px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-top: -20px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+h3 {
+  display: inline;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+h4 {
+  margin-bottom: -8px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h5 {
+  margin-bottom: -8px;
+  font-weight: normal;
+}
+
 ul {
   list-style-type: none;
+}
+
+hr {
+  border-top: 1px solid #86D6FC;
 }
 
 /*# sourceMappingURL=style.css.map */
